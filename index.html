@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gradient-to-br from-purple-600 to-purple-900 min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="bg-white rounded-3xl shadow-2xl w-full max-w-2xl p-8 md:p-10 mb-6">
+
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-purple-600 mb-3">📝 My To-Do List</h1>
+            <p class="text-gray-600 text-lg">Organize your tasks efficiently</p>
+        </header>
+
+
+        <div class="mb-8">
+            <form id="todoForm" class="space-y-4">
+                <div class="flex flex-col md:flex-row gap-3">
+                    <input 
+                        type="text" 
+                        id="todoInput" 
+                        placeholder="Enter your task..." 
+                        required
+                        class="flex-1 px-5 py-4 border-2 border-gray-300 rounded-xl focus:outline-none focus:border-purple-600 transition-colors text-base"
+                    >
+                    <input 
+                        type="date" 
+                        id="dateInput" 
+                        required
+                        class="px-5 py-4 border-2 border-gray-300 rounded-xl focus:outline-none focus:border-purple-600 transition-colors text-base md:w-48"
+                    >
+                </div>
+                <button 
+                    type="submit" 
+                    class="w-full bg-gradient-to-r from-purple-600 to-purple-800 text-white font-bold py-4 px-8 rounded-xl hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 text-base"
+                >
+                    Add Task
+                </button>
+            </form>
+        </div>
+
+        <div class="flex gap-3 mb-6 justify-center flex-wrap">
+            <button class="filter-btn px-6 py-3 border-2 border-gray-300 rounded-lg font-medium transition-all duration-300 hover:border-purple-600 hover:text-purple-600 active" data-filter="all">All</button>
+            <button class="filter-btn px-6 py-3 border-2 border-gray-300 rounded-lg font-medium transition-all duration-300 hover:border-purple-600 hover:text-purple-600" data-filter="active">Active</button>
+            <button class="filter-btn px-6 py-3 border-2 border-gray-300 rounded-lg font-medium transition-all duration-300 hover:border-purple-600 hover:text-purple-600" data-filter="completed">Completed</button>
+        </div>
+
+
+        <div id="todoList" class="space-y-4 max-h-96 overflow-y-auto pr-2">
+
+        </div>
+
+
+        <div id="emptyState" class="text-center py-16 text-gray-500 text-lg hidden">
+            <p>Belum ada tugas, tambahkan 1 tugas untuk memulai!</p>
+        </div>
+    </div>
+
+
+    <footer class="text-center text-white py-4">
+        <p class="text-sm md:text-base font-medium">
+            © 2026 Akhdan Todo App. All rights reserved.
+        </p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
